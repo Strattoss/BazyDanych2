@@ -30,8 +30,6 @@ public class Main {
 
     public static void main(final String[] args) throws Exception {
         writeToDatabase();
-        readProductsIncludedInInvoice();
-        readInvoicesWhereProductWasSold();
     }
 
     public static void writeToDatabase() {
@@ -92,11 +90,11 @@ public class Main {
             for (Product product: products) {
                 session.persist(product);
             }
-
+/*
             for (Invoice invoice: invoices) {
                 session.persist(invoice);
             }
-
+*/
 
             transaction.commit();
         }

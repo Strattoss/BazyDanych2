@@ -21,7 +21,7 @@ public class Product {
     @JoinColumn(name = "CATEGORY_FK")
     private Category category;
 
-    @ManyToMany(mappedBy = "includedProducts")
+    @ManyToMany(mappedBy = "includedProducts", cascade = {CascadeType.PERSIST})
     private Set<Invoice> canBeSoldIn = new HashSet<>();
 
     public Product() {

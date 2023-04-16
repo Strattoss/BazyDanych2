@@ -19,8 +19,6 @@ public class JPA_Main {
 
 	public static void main(final String[] args) {
 		writeToDatabase();
-		readProductsIncludedInInvoice();
-		readInvoicesWhereProductWasSold();
 	}
 
 	public static void writeToDatabase() {
@@ -87,9 +85,8 @@ public class JPA_Main {
 			entityManager.persist(invoice);
 		}
 
-
 		entityTransaction.commit();
-
+		entityManager.close();
 	}
 
 	public static void readProductsIncludedInInvoice() {
@@ -104,7 +101,7 @@ public class JPA_Main {
 		}
 
 		entityTransaction.commit();
-
+		entityManager.close();
 	}
 
 	public static void readInvoicesWhereProductWasSold() {
@@ -119,7 +116,7 @@ public class JPA_Main {
 		}
 
 		entityTransaction.commit();
-
+		entityManager.close();
 	}
 
 	public static void readProductsFromCategory() {
@@ -135,7 +132,7 @@ public class JPA_Main {
 		}
 
 		entityTransaction.commit();
-
+		entityManager.close();
 	}
 
 	public static void readCategoryFromProduct() {
@@ -147,6 +144,6 @@ public class JPA_Main {
 		System.out.println(product.getCategory().getCategoryName());
 
 		entityTransaction.commit();
-
+		entityManager.close();
 	}
 }
