@@ -1,7 +1,6 @@
 package org.jpa;
 
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Id;
 
 @Embeddable
 public class Address {

@@ -1,22 +1,17 @@
 package org.jpa;
 
 import jakarta.persistence.*;
-import jdk.jfr.Frequency;
 
 @Entity
-@SecondaryTable(name = "ADDRESS")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Company {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int CompanyId;
 	String CompanyName;
 
-	@Column(table = "ADDRESS")
 	String Street;
-	@Column(table = "ADDRESS")
 	String City;
-	@Column(table = "ADDRESS")
 	String ZipCode;
 
 	public Company() {
