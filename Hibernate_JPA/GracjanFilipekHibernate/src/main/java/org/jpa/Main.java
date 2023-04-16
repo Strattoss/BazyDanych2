@@ -36,7 +36,17 @@ public class Main {
         try (Session session = getSession()) {
             Transaction transaction = session.beginTransaction();
 
-            Supplier supplier = new Supplier("Fred's Automobiles", "Slimstone", "Petrograd");
+            // creating objects
+            List<Address> addresses = new ArrayList<>(Arrays.asList(
+                    new Address("Petrograd", "Slimstone", "12-345"),
+                    new Address("Burkoberg", "Mamma Mia", "67-890")
+            ));
+
+            List<Supplier> suppliers = new ArrayList<>(Arrays.asList(
+                    new Supplier("Pikapol", addresses.get(0)),
+                    new Supplier("The Rolling Bowl", addresses.get(1)),
+                    new Supplier("Profit as Huge as Inflation", addresses.get(1))
+            ));
 
             List<Product> products = new ArrayList<>(Arrays.asList(
                     new Product("Orb of Winter", 7),
@@ -68,9 +78,13 @@ public class Main {
             categories.get(2).addProduct(products.get(3));
 
             // add products to supplier's supplied products
-            for (Product product: products) {
-                supplier.addProduct(product);
-            }
+            suppliers.get(0).addProduct(products.get(0));
+            suppliers.get(0).addProduct(products.get(3));
+
+            suppliers.get(1).addProduct(products.get(2));
+
+            suppliers.get(2).addProduct(products.get(1));
+            suppliers.get(2).addProduct(products.get(4));
 
             // add products to invoices
             invoices.get(0).addProduct(products.get(0));
@@ -81,7 +95,9 @@ public class Main {
 
 
             // persist all objects
-            session.persist(supplier);
+            for (Supplier supplier: suppliers) {
+                session.persist(supplier);
+            }
 
             for (Category category: categories) {
                 session.persist(category);
@@ -100,6 +116,7 @@ public class Main {
         }
     }
 
+    /*
     public static void readProductsIncludedInInvoice() {
         try (Session session = getSession()) {
             Transaction transaction = session.beginTransaction();
@@ -152,5 +169,5 @@ public class Main {
 
             transaction.commit();
         }
-    }
+    }*/
 }

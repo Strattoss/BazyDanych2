@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class JPA_Main {
-	private static final EntityManagerFactory entityManagerFactory = Persistence.
+	/*private static final EntityManagerFactory entityManagerFactory = Persistence.
 			createEntityManagerFactory("derby");
 
 	public static EntityManager getEntityManager() {
@@ -145,5 +145,5 @@ public class JPA_Main {
 
 		entityTransaction.commit();
 		entityManager.close();
-	}
+	}*/
 }

@@ -11,8 +11,8 @@ public class Supplier {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int SupplierId;
 	private String CompanyName;
-	private String Street;
-	private String City;
+	@Embedded
+	Address address;
 
 	@OneToMany
 	@JoinColumn(name = "SUPPLIER_FK")
@@ -22,10 +22,9 @@ public class Supplier {
 		// required by Hibernate
 	}
 
-	public Supplier(String companyName, String street, String city) {
+	public Supplier(String companyName, Address address) {
 		CompanyName = companyName;
-		Street = street;
-		City = city;
+		this.address = address;
 	}
 
 	public void addProduct(Product product) {
