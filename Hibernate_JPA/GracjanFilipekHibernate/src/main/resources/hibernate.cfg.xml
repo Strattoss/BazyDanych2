@@ -13,5 +13,7 @@
     <property name="hbm2ddl.auto">create</property>
     <mapping class="org.jpa.Product"/>
     <mapping class="org.jpa.Supplier"/>
+    <mapping class="org.jpa.Category"/>
+    <mapping class="org.jpa.Invoice"/>
   </session-factory>
 </hibernate-configuration>

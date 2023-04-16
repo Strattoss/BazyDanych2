@@ -14,9 +14,8 @@ public class Supplier {
 	private String Street;
 	private String City;
 
-
 	@OneToMany
-	@JoinColumn(name = "Supplier_FK")
+	@JoinColumn(name = "SUPPLIER_FK")
 	private Set<Product> suppliedProducts = new HashSet<>();
 
 	public Supplier() {
@@ -32,5 +31,17 @@ public class Supplier {
 	public void addProduct(Product product) {
 		this.suppliedProducts.add(product);
 		product.setSupplier(this);
+	}
+
+	public boolean suppliesProduct(Product product) {
+		return this.suppliedProducts.contains(product);
+	}
+
+	public Set<Product> getSuppliedProducts() {
+		return suppliedProducts;
+	}
+
+	public String getCompanyName() {
+		return CompanyName;
 	}
 }
