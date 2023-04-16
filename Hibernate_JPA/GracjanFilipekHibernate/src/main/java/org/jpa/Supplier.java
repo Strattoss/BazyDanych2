@@ -6,19 +6,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@SecondaryTable(name = "ADDRESS")
-public class Supplier {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int SupplierId;
-	private String CompanyName;
-
-	@Column(table = "ADDRESS")
-	private String Street;
-	@Column(table = "ADDRESS")
-	private String City;
-	@Column(table = "ADDRESS")
-	private String ZipCode;
+public class Supplier extends Company{
+	private String bankAccountNumber;
 
 	@OneToMany
 	@JoinColumn(name = "SUPPLIER_FK")
@@ -28,11 +17,9 @@ public class Supplier {
 		// required by Hibernate
 	}
 
-	public Supplier(String companyName, String street, String city, String zipCode) {
-		CompanyName = companyName;
-		Street = street;
-		City = city;
-		ZipCode = zipCode;
+	public Supplier(String companyName, String street, String city, String zipCode, String bankAccountNumber) {
+		super(companyName, street, city, zipCode);
+		this.bankAccountNumber = bankAccountNumber;
 	}
 
 	public void addProduct(Product product) {
@@ -49,6 +36,6 @@ public class Supplier {
 	}
 
 	public String getCompanyName() {
-		return CompanyName;
+		return this.CompanyName;
 	}
 }

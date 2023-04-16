@@ -1,9 +1,6 @@
 package org.jpa;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 
 import java.util.ArrayList;
@@ -43,9 +40,15 @@ public class Main {
             ));
 
             List<Supplier> suppliers = new ArrayList<>(Arrays.asList(
-                    new Supplier("Pikapol", "Petrograd", "Slimstone", "12-345"),
-                    new Supplier("The Rolling Bowl", "Burkoberg", "Mamma Mia", "67-890"),
-                    new Supplier("Profit as Huge as Inflation", "Burkoberg", "Mamma Mia", "67-890")
+                    new Supplier("Pikapol", "Petrograd", "Slimstone", "12-345", "1234567890123456"),
+                    new Supplier("The Rolling Bowl", "Burkoberg", "Mamma Mia", "67-890", "0987654321098765"),
+                    new Supplier("Profit as Huge as Inflation", "Burkoberg", "Mamma Mia", "67-890", "1647385694072539")
+            ));
+
+            List<Customer> customers = new ArrayList<>(Arrays.asList(
+                    new Customer("John Lock's Stock", "London", "Drowning Street", "45-745", 0.3),
+                    new Customer("Market Like Your Carpet", "Teheran", "Shah-Mat", "23-445", 0.2),
+                    new Customer("Rejuvenation Home", "Athlantis", "Eldorado", "00-001", 0.18)
             ));
 
             List<Product> products = new ArrayList<>(Arrays.asList(
@@ -97,6 +100,10 @@ public class Main {
             // persist all objects
             for (Supplier supplier: suppliers) {
                 session.persist(supplier);
+            }
+
+            for (Customer customer: customers) {
+                session.persist(customer);
             }
 
             for (Category category: categories) {

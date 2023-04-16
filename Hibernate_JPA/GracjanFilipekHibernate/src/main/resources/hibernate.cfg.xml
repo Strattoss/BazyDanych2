@@ -15,5 +15,7 @@
     <mapping class="org.jpa.Supplier"/>
     <mapping class="org.jpa.Category"/>
     <mapping class="org.jpa.Invoice"/>
+    <mapping class="org.jpa.Customer"/>
+    <mapping class="org.jpa.Company"/>
   </session-factory>
 </hibernate-configuration>
