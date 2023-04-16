@@ -5,7 +5,7 @@ import jdk.jfr.Frequency;
 
 @Entity
 @SecondaryTable(name = "ADDRESS")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Company {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
