@@ -43,9 +43,9 @@ public class Main {
             ));
 
             List<Supplier> suppliers = new ArrayList<>(Arrays.asList(
-                    new Supplier("Pikapol", addresses.get(0)),
-                    new Supplier("The Rolling Bowl", addresses.get(1)),
-                    new Supplier("Profit as Huge as Inflation", addresses.get(1))
+                    new Supplier("Pikapol", "Petrograd", "Slimstone", "12-345"),
+                    new Supplier("The Rolling Bowl", "Burkoberg", "Mamma Mia", "67-890"),
+                    new Supplier("Profit as Huge as Inflation", "Burkoberg", "Mamma Mia", "67-890")
             ));
 
             List<Product> products = new ArrayList<>(Arrays.asList(

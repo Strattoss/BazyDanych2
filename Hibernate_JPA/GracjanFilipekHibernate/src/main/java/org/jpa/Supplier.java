@@ -6,13 +6,19 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@SecondaryTable(name = "ADDRESS")
 public class Supplier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int SupplierId;
 	private String CompanyName;
-	@Embedded
-	Address address;
+
+	@Column(table = "ADDRESS")
+	private String Street;
+	@Column(table = "ADDRESS")
+	private String City;
+	@Column(table = "ADDRESS")
+	private String ZipCode;
 
 	@OneToMany
 	@JoinColumn(name = "SUPPLIER_FK")
@@ -22,9 +28,11 @@ public class Supplier {
 		// required by Hibernate
 	}
 
-	public Supplier(String companyName, Address address) {
+	public Supplier(String companyName, String street, String city, String zipCode) {
 		CompanyName = companyName;
-		this.address = address;
+		Street = street;
+		City = city;
+		ZipCode = zipCode;
 	}
 
 	public void addProduct(Product product) {
