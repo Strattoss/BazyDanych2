@@ -1,0 +1,40 @@
+<mxfile host="Electron" modified="2023-05-18T18:36:53.284Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="JPOrxYXhDPgltRs1TC-L" version="21.1.2" type="device">
+  <diagram name="Strona-1" id="xLkCI0tEZ0q5kZyF2LaB">
+    <mxGraphModel dx="1036" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tHiz4rZ3aGoJjOIE87YR-1" value="company" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tHiz4rZ3aGoJjOIE87YR-2" value="reservation" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="380" y="320" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tHiz4rZ3aGoJjOIE87YR-3" value="trip" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="200" y="320" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tHiz4rZ3aGoJjOIE87YR-4" value="customer" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="560" y="320" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tHiz4rZ3aGoJjOIE87YR-8" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;rounded=0;" edge="1" parent="1" source="tHiz4rZ3aGoJjOIE87YR-1" target="tHiz4rZ3aGoJjOIE87YR-3">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="280" y="370" as="sourcePoint" />
+            <mxPoint x="380" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tHiz4rZ3aGoJjOIE87YR-9" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;rounded=0;" edge="1" parent="1" source="tHiz4rZ3aGoJjOIE87YR-3" target="tHiz4rZ3aGoJjOIE87YR-2">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="200" y="245" as="sourcePoint" />
+            <mxPoint x="210" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tHiz4rZ3aGoJjOIE87YR-10" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;rounded=0;" edge="1" parent="1" source="tHiz4rZ3aGoJjOIE87YR-4" target="tHiz4rZ3aGoJjOIE87YR-2">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="320" y="355" as="sourcePoint" />
+            <mxPoint x="390" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
